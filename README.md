@@ -131,13 +131,15 @@ A couple of implementation points:
 I like to combine this with [quip](http://github.com/caolan/quip) for rapid
 prototyping and just getting my ideas down in code:
 
+[Please note that this code actually doesn't work as of December 2015]
+
 ```js
 var Connect = require('connect'),
     quip = require('quip'),
     dispatch = require('dispatch');
 
 var server = Connect.createServer(
-    quip(),
+    quip(), // FIXME: throws error
     dispatch({
         '/': function(req, res, next){
             res.text('hello world!');
